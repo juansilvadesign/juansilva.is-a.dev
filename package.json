@@ -1,0 +1,37 @@
+{
+  "name": "juansilva.is-a.dev",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run clean && next build",
+    "build:export": "npm run clean && next build",
+    "clean": "powershell -ExecutionPolicy Bypass -File build-clean.ps1",
+    "clean:fallback": "node -e \"try { require('fs').rmSync('dist', { recursive: true, force: true }); } catch (e) { console.log('Clean completed'); }\"",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.462.0",
+    "next": "^14.1.0",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.9.0",
+    "eslint-config-next": "^15.4.6",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.5.3"
+  }
+}

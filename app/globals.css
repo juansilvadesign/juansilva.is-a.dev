@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-play-state-paused {
+    animation-play-state: paused;
+  }
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --primary: 220 90% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 84% 5%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 84% 5%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --primary: 220 90% 50%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 97% 87%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+  }
+}
+
+h1 {
+  font-family: 'Spectral', serif;
+  font-weight: 500;
+  font-size: 3.5rem;
+  line-height: 5.625rem;
+}
+
+h2 {
+  font-family: 'Spectral', serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 4.25rem;
+}
+
+h3 {
+  font-family: 'Spectral', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.875rem;
+}
+
+p {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('/assets/fonts/spectral/regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('/assets/fonts/spectral/medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/lora/regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/lora/bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Allow selecting text inside form controls and editable regions */
+  input,
+  textarea,
+  select,
+  [contenteditable] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer components {
+  /* Decorative animated lines used by LandingQuiz */
+    .ls-line{ position: relative; overflow: visible; }
+
+    .ls-line.horizontal{ width:400px; height:1px; }
+
+    .ls-line.horizontal::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 100%;
+        background: rgba(0,200,255,0.12); /* faint base line */
+        opacity: 1;
+        pointer-events: none;
+      }
+
+    .ls-line.horizontal::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 60%; /* width of the highlight band */
+        background: linear-gradient(90deg, rgba(0,200,255,0) 0%, rgba(0,200,255,1) 50%, rgba(0,200,255,0) 100%);
+        transform: translateX(-40%);
+        will-change: transform, opacity;
+        animation: lsSweepH 2400ms ease-in-out infinite;
+        opacity: 0;
+      }
+
+    .ls-line.vertical{ width:1px; height:400px; }
+
+    .ls-line.vertical::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      background: rgba(0,200,255,0.12); /* faint base line */
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .ls-line.vertical::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      height: 60%; /* height of the highlight band */
+      background: linear-gradient(180deg, rgba(0,200,255,0) 0%, rgba(0,200,255,1) 50%, rgba(0,200,255,0) 100%);
+      transform: translateY(40%);
+      will-change: transform, opacity;
+      animation: lsSweepV 2400ms ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes lsSweepH{
+      0%   { transform: translateX(-40%); opacity: 0; }
+      10%  { transform: translateX(-20%); opacity: 1; }
+      50%  { transform: translateX(100%); opacity: 1; }
+      90%  { transform: translateX(120%); opacity: 1; }
+      100% { transform: translateX(140%); opacity: 0; }
+    }
+
+    @keyframes lsSweepV{
+      0%   { transform: translateY(40%);  opacity: 0; }
+      10%  { transform: translateY(20%);  opacity: 1; }
+      50%  { transform: translateY(-100%); opacity: 1; }
+      90%  { transform: translateY(-120%); opacity: 1; }
+      100% { transform: translateY(-140%); opacity: 0; }
+    }
+}
