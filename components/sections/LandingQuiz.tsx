@@ -19,7 +19,7 @@ type Props = {
 };
 
 const defaultOptions: LandingOption[] = [
-  { id: "cases", icon: "/assets/icons/cases.svg", iconHover: "/assets/icons/cases-hover.svg", label: "Results & Cases studies", href: "/cases" },
+  { id: "cases", icon: "/assets/icons/cases.svg", iconHover: "/assets/icons/cases-hover.svg", label: "Results & Cases studies", href: "/projects" },
   { id: "projects", icon: "/assets/icons/projects.svg", iconHover: "/assets/icons/projects-hover.svg", label: "Repos, stars & tech", href: "/projects" },
   { id: "connect", icon: "/assets/icons/connect.svg", iconHover: "/assets/icons/connect-hover.svg", label: "Let's connect", href: "/contact" },
   /*

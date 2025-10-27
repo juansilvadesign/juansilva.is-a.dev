@@ -1,20 +1,15 @@
 'use client';
 
+import { SOCIAL_LINKS } from '@/constants/links';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
-  const pathname = usePathname();
-
-  // Hide navbar on landing quiz page
-  if (pathname === '/quiz') return null;
-
   return (
     <nav className="fixed top-0 left-0 w-full px-[72px] py-6 bg-gradient-to-b from-[rgba(255,255,255,0.02)] to-transparent transition-all duration-300 hover:from-[rgba(255,255,255,0.06)] hover:to-transparent z-50 border-transparent hover:border-[rgba(255,255,255,0.12)] border-b-[2px] hover:border-b-[2px]">
       <div className="max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo/Home link */}
-          <Link href="/" className="w-[168px] group relative">
+          <Link href="/" className="w-[210px] group relative">
             {/* Dramatic lens flare 
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute top-[-25px] left-[-40px] w-[240px] h-[90px] bg-[#625DF5] blur-[45px] mix-blend-color-dodge" />
@@ -47,7 +42,7 @@ const Navbar = () => {
               </div>
             </Link>
             <Link 
-              href="/#projects"
+              href="/projects"
               className="p-4 group relative flex flex-col hover:text-[#F7F7F7] transition-colors duration-300"
             >
               Projects
@@ -56,7 +51,7 @@ const Navbar = () => {
               </div>
             </Link>
             <Link 
-              href="/#contact"
+              href="/contact"
               className="p-4 group relative flex flex-col hover:text-[#F7F7F7] transition-colors duration-300"
             >
               Contact
@@ -66,56 +61,68 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex flex-col w-[168px] gap-[12px]">
-            <div className="flex flex-row w-full gap-[12px]">
+          <div className="flex flex-col w-[210px]">
+            <Link
+              href={SOCIAL_LINKS.LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-row w-full gap-[12px] justify-center items-center"
+              aria-label="LinkedIn Profile"
+            >
               
-              <img src="#" alt="Profile" className="w-[38px] h-[38px] block hover:hidden" />
-              <img src="#" alt="Profile" className="w-[38px] h-[38px] hidden hover:block" />
+              <div className="inline-flex align-center w-auto max-w-[56px] h-[56px]">
+                <img src="https://i.ibb.co/ZpM5sQ5c/profile.webp" alt="Profile" className="object-cover transition-opacity duration-200 group-hover:opacity-0" />
+                <img src="https://i.ibb.co/273HS4fD/profile-hover.webp" alt="Profile" className="-translate-x-14 object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              </div>
 
-              <div className="group flex flex-row w-full">
+              <div className="flex flex-row gap-2 justify-center items-center">
 
                 <div className="flex flex-col">
-                  <p className="text-[#CECFD2] leading-[1.5rem]">
+                  <h6 className="text-center text-[#CECFD2] leading-[1.5rem]">
                     Juan Silva
-                  </p>
+                  </h6>
                   <p className="text-[#94979C] text-[12px] leading-[0.875rem]">
                     @juansilvadesign
                   </p>
                 </div>
 
-                <img src="/assets/icons/chevron-right.svg" alt="Icon" className="w-6 h-6 block group-hover:hidden" />
-                <img src="/assets/icons/chevron-right-hover.svg" alt="Icon" className="w-6 h-6 hidden group-hover:block" />
+                <div className="flex w-6 h-6">
+                  <img src="/assets/icons/chevron-right.svg" alt="Icon" className="object-cover transition-opacity duration-200 group-hover:opacity-0" />
+                  <img src="/assets/icons/chevron-right-hover.svg" alt="Icon" className="-translate-x-6 object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                </div>
 
               </div>
-            </div>
+            </Link>
 
-            <div className="flex flex-row w-full h-auto gap-[12px] justify-center items-center">
+            {/*/ Social icons 
+            <div className="flex flex-row w-full h-auto justify-center items-center">
 
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+              <a href={SOCIAL_LINKS.LINKEDIN} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/linkedin.svg" alt="LinkedIn" className="w-4 h-4" />
               </a>
-              
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+
+              <a href={SOCIAL_LINKS.X} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/twitter.svg" alt="Twitter" className="w-4 h-4" />
               </a>
-              
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+
+              <a href={SOCIAL_LINKS.INSTAGRAM} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/instagram.svg" alt="Instagram" className="w-4 h-4" />
               </a>
               
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+              <a href={SOCIAL_LINKS.THREADS} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/threads.svg" alt="Threads" className="w-4 h-4" />
               </a>
 
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+              <a href={SOCIAL_LINKS.FIGMA} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/figma-outlined.svg" alt="Figma" className="w-4 h-4" />
               </a>
 
-              <a href="#" className="w-12 h-12 flex items-center justify-center">
+              <a href={SOCIAL_LINKS.DRIBBBLE} className="w-12 h-12 flex items-center justify-center">
                 <img src="/assets/icons/dribbble.svg" alt="Dribbble" className="w-4 h-4" />
               </a>
 
             </div>
+            */}
 
           </div>
         </div>

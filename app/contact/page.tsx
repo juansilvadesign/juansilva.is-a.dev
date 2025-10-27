@@ -1,11 +1,11 @@
 import Navbar from "@/components/ui/Navbar";
-import Hero from "@/components/sections/Hero";
+import Contact from "@/components/sections/Contact";
 
 export default function Page() {
   return (
     <body className="min-h-screen bg-[#0F1217]">
       <Navbar />
-      <Hero />
+      <Contact />
     </body>
   );
 }

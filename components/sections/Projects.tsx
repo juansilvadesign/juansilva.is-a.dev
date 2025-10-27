@@ -80,7 +80,7 @@ export default function Projects() {
   }
 
   return (
-    <section className="py-[174px] pl-[170px] pr-[72px]">
+    <section className="pt-[224px] pl-[170px] pr-[72px]">
       <div className="flex flex-row mx-auto justify-center items-start gap-[104px]">
 
         <div className="flex flex-col max-w-[550px] pt-[27px] gap-12">
