@@ -3,7 +3,7 @@ export const metadata = {
     template: '%s | Juan Silva',
     default: 'Juan Silva - Full-Stack Developer',
   },
-  description: '',
+  description: 'Living my dream while building it!',
   metadataBase: new URL('https://juansilva.is-a.dev'),
   openGraph: {
     type: 'website',
@@ -11,7 +11,7 @@ export const metadata = {
     url: 'https://juansilva.is-a.dev',
     siteName: 'Juan Silva',
     title: 'Juan Silva - Full-Stack Developer',
-    description: '',
+    description: 'Living my dream while building it!',
     images: [
       {
         url: '/og-image.jpg',
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Juan Silva - Full-Stack Developer',
-    description: '',
+    description: 'Living my dream while building it!',
     images: ['/og-image.jpg'],
   },
   robots: {
