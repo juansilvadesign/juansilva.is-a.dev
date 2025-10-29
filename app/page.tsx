@@ -1,4 +1,4 @@
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 
 export default function Page() {

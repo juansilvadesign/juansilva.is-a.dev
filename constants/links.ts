@@ -25,7 +25,7 @@ export const SOCIAL_LINKS = {
   YOUTUBE: 'https://youtube.com/juansilvadesign',
   TIKTOK: 'https://tiktok.com/juansilvadesign',
   FACEBOOK: 'https://www.facebook.com/people/juansilvadesign/',
-  MAIL: 'mailto:contact@juansilva.design',
+  MAIL: 'mailto:contact@juansilva.is-a.dev',
   NUMBER: 'tel:+5521966442965',
   LOCAL: '#'
 } as const;
@@ -37,7 +37,7 @@ export const PAGE_LINKS = {
 
 // Legal Links
 export const LEGAL_LINKS = {
-  PRIVACY_POLICY: '/politica',
-  TERMS_OF_USE: '/termos',
+  PRIVACY_POLICY: '/privacy',
+  TERMS_OF_USE: '/terms',
   COOKIES_POLICY: '/cookies'
 } as const;

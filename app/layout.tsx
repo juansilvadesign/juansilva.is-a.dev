@@ -1,5 +1,5 @@
 import LandingQuiz from "@/components/sections/LandingQuiz";
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "@/components/sections/Navbar";
 import "./globals.css";
 import { metadata } from "./metadata";
 

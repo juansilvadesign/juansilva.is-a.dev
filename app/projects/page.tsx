@@ -1,4 +1,4 @@
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "@/components/sections/Navbar";
 import Projects from "@/components/sections/Projects";
 
 export default function Page() {

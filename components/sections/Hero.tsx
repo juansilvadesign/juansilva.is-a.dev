@@ -1,3 +1,5 @@
+"use client"
+
 import { SOCIAL_LINKS } from "@/constants/links";
 
 export default function Hero() {
