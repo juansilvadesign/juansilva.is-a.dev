@@ -2,10 +2,20 @@
 
 import { SOCIAL_LINKS } from '@/constants/links';
 import Link from 'next/link';
+import { useLanding } from '@/app/context/LandingContext';
 
 const Navbar = () => {
+  const { isLandingVisible } = useLanding();
+
   return (
-    <nav className="fixed top-0 left-0 w-full px-[72px] py-6 bg-gradient-to-b from-[rgba(255,255,255,0.02)] to-transparent transition-all duration-300 hover:from-[rgba(255,255,255,0.06)] hover:to-transparent z-50 border-transparent hover:border-[rgba(255,255,255,0.12)] border-b-[2px] hover:border-b-[2px]">
+    <nav 
+      className="fixed top-0 left-0 w-full px-[72px] py-6 bg-gradient-to-b from-[rgba(255,255,255,0.02)] to-transparent transition-all duration-300 hover:from-[rgba(255,255,255,0.06)] hover:to-transparent z-50 border-transparent hover:border-[rgba(255,255,255,0.12)] border-b-[2px] hover:border-b-[2px]"
+      style={{ 
+        visibility: isLandingVisible ? 'hidden' : 'visible',
+        opacity: isLandingVisible ? 0 : 1,
+        transition: 'opacity 0.3s ease-in-out'
+      }}
+    >
       <div className="max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo/Home link */}

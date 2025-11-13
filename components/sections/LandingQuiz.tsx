@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLanding } from "@/app/context/LandingContext";
 
 export type LandingOption = {
   id: string;
@@ -29,27 +30,27 @@ const defaultOptions: LandingOption[] = [
 
 export default function LandingQuiz({ options = defaultOptions, storageKey = "landingQuizSeen", forceShow = false, revealRadius = 140 }: Props) {
   const router = useRouter();
-  const [visible, setVisible] = useState(false);
+  const { isLandingVisible, setIsLandingVisible } = useLanding();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   // (debug flag removed) optional debug was used during development
 
   useEffect(() => {
     if (forceShow) {
-      setVisible(true);
+      setIsLandingVisible(true);
       return;
     }
 
     try {
       const seen = typeof window !== "undefined" ? localStorage.getItem(storageKey) : null;
-      if (!seen) setVisible(true);
+      if (!seen) setIsLandingVisible(true);
     } catch (e) {
       // localStorage might be unavailable in some environments; default to showing nothing
     }
-  }, [forceShow, storageKey]);
+  }, [forceShow, storageKey, setIsLandingVisible]);
 
   // Track cursor/touch position inside the modal to create a "reveal" hole.
-  // Re-run when `visible` changes so listeners are attached after the modal mounts.
+  // Re-run when `isLandingVisible` changes so listeners are attached after the modal mounts.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -112,7 +113,7 @@ export default function LandingQuiz({ options = defaultOptions, storageKey = "la
       window.removeEventListener('pointerout', handlePointerLeave);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [visible]);
+  }, [isLandingVisible]);
 
   const markSeen = () => {
     try {
@@ -124,22 +125,20 @@ export default function LandingQuiz({ options = defaultOptions, storageKey = "la
 
   const onSelect = (href: string) => {
     markSeen();
-    setVisible(false);
+    setIsLandingVisible(false);
     // navigate after state updates
     router.push(href);
   };
 
   const onSkip = () => {
     markSeen();
-    setVisible(false);
+    setIsLandingVisible(false);
   };
 
-  if (!visible) return null;
-
-  // maskStyle removed — overlay handles masking now
+  if (!isLandingVisible) return <div style={{ display: 'none' }} />;
 
   return (
-    <div className="fixed inset-0 z-50">
+    <div className="fixed inset-0 z-50" style={{ display: isLandingVisible ? 'block' : 'none' }}>
       <div className="absolute inset-0 bg-black/60" aria-hidden />
 
       <div ref={containerRef} className="relative w-full h-full bg-[#0F1217] p-6 overflow-auto">
