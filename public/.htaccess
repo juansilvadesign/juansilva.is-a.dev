@@ -4,8 +4,8 @@ Options -Multiviews
 # Performance Headers
 <IfModule mod_headers.c>
   # Preload critical resources
-  Header always set Link "</icons/icon-192x192.png>; rel=preload; as=image"
-  Header always append Link "</icons/icon-512x512.png>; rel=preload; as=image"
+  Header always set Link "</android-chrome-192x192.png>; rel=preload; as=image"
+  Header always append Link "</android-chrome-512x512.png>; rel=preload; as=image"
   
   # Enable GZIP compression
   Header set Vary "Accept-Encoding"
