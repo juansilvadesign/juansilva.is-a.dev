@@ -3,14 +3,14 @@
   
   # Juan Silva - Portfolio
   
+  A modern, high-performance portfolio website showcasing projects, case studies, and professional work from Juan Silva, a full-stack developer and designer from Rio de Janeiro, Brazil.
+
+  **Live at:** [juansilva.is-a.dev](https://juansilva.is-a.dev)
+  
   [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?logo=typescript)](https://www.typescriptlang.org)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
   [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-  
-  A modern, high-performance portfolio website showcasing projects, case studies, and professional work from Juan Silva, a full-stack developer and designer from Rio de Janeiro, Brazil.
-
-  **Live at:** [juansilva.is-a.dev](https://juansilva.is-a.dev)
 </div>
 
 ## Features
