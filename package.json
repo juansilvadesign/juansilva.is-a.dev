@@ -2,7 +2,6 @@
   "name": "juansilva.is-a.dev",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://juansilvadesign.github.io/juansilva.is-a.dev",
   "scripts": {
     "dev": "next dev",
     "build": "npm run clean && next build",
@@ -10,8 +9,6 @@
     "clean": "powershell -ExecutionPolicy Bypass -File build-clean.ps1",
     "clean:fallback": "node -e \"try { require('fs').rmSync('dist', { recursive: true, force: true }); } catch (e) { console.log('Clean completed'); }\"",
     "start": "next start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "next lint"
   },
   "dependencies": {
@@ -35,7 +32,6 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9.9.0",
     "eslint-config-next": "^15.4.6",
-    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.5.3"
