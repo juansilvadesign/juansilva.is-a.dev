@@ -46,7 +46,7 @@ export default function Projects() {
       theme: 'loom',
       stacks: ['javascript', 'opensource'],
       primaryLink: { href: 'https://github.com/juansilvadesign/loom-downloader', label: 'Go to Project', icon: '/assets/icons/github.svg' },
-      // No secondaryLink for this project
+      secondaryLink: { href: 'https://loom.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
       thumb: '/assets/icons/loom-thumb.svg',
       preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Landing Preview' },
     },
