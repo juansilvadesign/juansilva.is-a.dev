@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import ProjectCard from '../ui/ProjectCard'
 import { StackId } from '../ui/Stacks'
 
-type ProjectTheme = 'space' | 'loom' | 'qrcode'
+type ProjectTheme = 'space' | 'loom' | 'qrcode' | 'gdrive'
 
 const PROJECT_THEMES = {
   space: {
@@ -15,6 +15,9 @@ const PROJECT_THEMES = {
   },
   qrcode: {
     className: "bg-gradient-to-r from-[#35C1E9] to-[#4E3191]"
+  },
+  gdrive: {
+    className: "bg-gradient-gdrive"
   },
 }
 
@@ -58,6 +61,16 @@ export default function Projects() {
       primaryLink: { href: 'https://github.com/juansilvadesign/custom-qr-code-generator', label: 'Go to Project', icon: '/assets/icons/github.svg' },
       // No secondaryLink for this project
       thumb: 'https://i.ibb.co/vx177bm3/qrcode-thumb.webp',
+      preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
+    },
+    {
+      title: 'GDrive Video',
+      description: 'A robust Python-based tool and chrome extension that enables effortless downloading of videos from Google Drive, including those marked as _view-only_ or _private_.',
+      theme: 'gdrive',
+      stacks: ['python', 'opensource'],
+      primaryLink: { href: 'https://github.com/juansilvadesign/gdrive-video', label: 'Go to Project', icon: '/assets/icons/github.svg' },
+      secondaryLink: { href: 'https://gdrive-video.streamlit.app', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
+      thumb: '/assets/icons/gdrive-thumb.svg',
       preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
     },
   ]

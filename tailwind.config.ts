@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-gdrive': 'linear-gradient(270deg, #188038 0%, #34A853 20%, #1967D1 40%, #4285F3 60%, #E94335 80%, #FBBC05 100%)'
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
