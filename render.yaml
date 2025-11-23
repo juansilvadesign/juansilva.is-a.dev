@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: juansilva-frontend
+    env: node
+    region: virginia
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        sync: false # Configure in dashboard to point to backend URL
+
+  - type: web
+    name: juansilva-backend
+    env: node
+    region: virginia
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ZOHO_USER
+        sync: false # Configure in dashboard
+      - key: ZOHO_PASSWORD
+        sync: false # Configure in dashboard

@@ -118,8 +118,20 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
+      const response = await fetch(`${API_URL}/api/send`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
 
       setSubmitSuccess(true);
       toast.success('Mensagem enviada com sucesso!');
@@ -172,11 +184,10 @@ const Contact = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder=" "
-                className={`peer h-14 pt-4 ${
-                  touched.fname && fieldErrors.fname
-                    ? "border-red-500 focus:border-red-500"
-                    : ""
-                }`}
+                className={`peer h-14 pt-4 ${touched.fname && fieldErrors.fname
+                  ? "border-red-500 focus:border-red-500"
+                  : ""
+                  }`}
                 required
               />
               <Label
@@ -201,11 +212,10 @@ const Contact = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder=" "
-                className={`peer h-14 pt-4 ${
-                  touched.lname && fieldErrors.lname
-                    ? "border-red-500 focus:border-red-500"
-                    : ""
-                }`}
+                className={`peer h-14 pt-4 ${touched.lname && fieldErrors.lname
+                  ? "border-red-500 focus:border-red-500"
+                  : ""
+                  }`}
                 required
               />
               <Label
@@ -230,11 +240,10 @@ const Contact = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder=" "
-                className={`peer h-14 pt-4 ${
-                  touched.email && fieldErrors.email
-                    ? "border-red-500 focus:border-red-500"
-                    : ""
-                }`}
+                className={`peer h-14 pt-4 ${touched.email && fieldErrors.email
+                  ? "border-red-500 focus:border-red-500"
+                  : ""
+                  }`}
                 required
               />
               <Label
@@ -258,11 +267,10 @@ const Contact = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder=" "
-                className={`peer resize-none pt-6 transition-all duration-200 ease-in-out placeholder-shown:leading-none focus-visible:outline-none focus-visible:ring-transparent focus:h-[128px] [&:not(:placeholder-shown)]:h-[128px] ${
-                  touched.message && fieldErrors.message
-                    ? "border-red-500 focus:border-red-500"
-                    : ""
-                }`}
+                className={`peer resize-none pt-6 transition-all duration-200 ease-in-out placeholder-shown:leading-none focus-visible:outline-none focus-visible:ring-transparent focus:h-[128px] [&:not(:placeholder-shown)]:h-[128px] ${touched.message && fieldErrors.message
+                  ? "border-red-500 focus:border-red-500"
+                  : ""
+                  }`}
                 required
               />
               <Label
@@ -291,26 +299,25 @@ const Contact = () => {
               </label>
             </div>
           </form>
-          
+
           {/* Submit Button */}
           <button
             type="submit"
-            className={`w-full px-[18px] py-[12px] rounded-[8px] font-semibold transition-all duration-300 ${
-              submitSuccess
-                ? "bg-green-500/20 border-2 border-green-500 text-green-400"
-                : isSubmitting
+            className={`w-full px-[18px] py-[12px] rounded-[8px] font-semibold transition-all duration-300 ${submitSuccess
+              ? "bg-green-500/20 border-2 border-green-500 text-green-400"
+              : isSubmitting
                 ? "bg-[rgba(255,255,255,0.10)] border-2 border-[rgba(255,255,255,0.12)] text-[#F7F7F7] opacity-70"
                 : "bg-[rgba(255,255,255,0.10)] border-2 border-[rgba(255,255,255,0.12)] text-[#F7F7F7] hover:bg-[rgba(255,255,255,0.25)]"
-            }`}
+              }`}
             disabled={isSubmitting}
           >
             {submitSuccess
               ? "✓ Message Sent!"
               : isSubmitting
-              ? "Submitting..."
-              : "Submit"}
+                ? "Submitting..."
+                : "Submit"}
           </button>
-          
+
         </div>
       </div>
     </section>

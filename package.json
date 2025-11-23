@@ -2,6 +2,9 @@
   "name": "juansilva.is-a.dev",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "npm run clean && next build",
@@ -19,6 +22,7 @@
     "lucide-react": "^0.462.0",
     "next": "^14.1.0",
     "next-themes": "^0.2.1",
+    "nodemailer": "^7.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sonner": "^2.0.7",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.5.5",
+    "@types/nodemailer": "^7.0.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.21",
