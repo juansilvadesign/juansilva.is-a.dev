@@ -8,7 +8,7 @@
     "build:export": "npm run clean && next build",
     "clean": "powershell -ExecutionPolicy Bypass -File build-clean.ps1",
     "clean:fallback": "node -e \"try { require('fs').rmSync('dist', { recursive: true, force: true }); } catch (e) { console.log('Clean completed'); }\"",
-    "start": "next start",
+    "start": "npx -y serve dist",
     "lint": "next lint"
   },
   "dependencies": {
