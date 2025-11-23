@@ -41,10 +41,10 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           />
           <div 
             className={cn(
-              "w-5 h-5 mt-1 border-2 rounded transition-all duration-200 flex items-center justify-center cursor-pointer",
+              "w-5 h-5 border-2 rounded transition-all duration-200 flex items-center justify-center cursor-pointer",
               isChecked 
                 ? "bg-primary border-primary" 
-                : "bg-white border-border hover:border-primary/50"
+                : "bg-transparent border-border hover:border-primary/50"
             )}
             onClick={() => {
               const input = document.getElementById(id || '') as HTMLInputElement;
@@ -53,7 +53,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           >
             <Check 
               className={cn(
-                "w-4 h-4 text-white transition-opacity duration-200",
+                "w-4 h-4 text-[#181D27] transition-opacity duration-200",
                 isChecked ? "opacity-100" : "opacity-0"
               )} 
             />

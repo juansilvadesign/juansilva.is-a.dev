@@ -8,19 +8,15 @@
   }
 }
 
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 9%;
-    --primary: 220 90% 50%;
+    --primary: 193 100% 50%;
     --primary-foreground: 0 0% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 84% 5%;
-    --border: 214 32% 91%;
+    --border: 222 8% 24%;
     --input: 214 32% 91%;
     --ring: 222 84% 5%;
     --muted: 210 40% 96%;
@@ -39,11 +35,11 @@
   .dark {
     --background: 222 84% 5%;
     --foreground: 210 40% 98%;
-    --primary: 220 90% 50%;
+    --primary: 193 100% 50%;
     --primary-foreground: 222 84% 5%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
+    --border: 222 8% 24%;
     --input: 217 33% 17%;
     --ring: 212 97% 87%;
     --muted: 217 33% 17%;
