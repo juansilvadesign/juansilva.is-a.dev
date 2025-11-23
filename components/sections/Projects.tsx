@@ -50,6 +50,7 @@ export default function Projects() {
       stacks: ['javascript', 'opensource'],
       primaryLink: { href: 'https://github.com/juansilvadesign/loom-downloader', label: 'Go to Project', icon: '/assets/icons/github.svg' },
       secondaryLink: { href: 'https://loom.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
+      // loom-downloader-7xpq.onrender.com
       thumb: '/assets/icons/loom-thumb.svg',
       preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Landing Preview' },
     },
@@ -59,7 +60,8 @@ export default function Projects() {
       theme: 'qrcode',
       stacks: ['python', 'opensource'],
       primaryLink: { href: 'https://github.com/juansilvadesign/custom-qr-code-generator', label: 'Go to Project', icon: '/assets/icons/github.svg' },
-      // No secondaryLink for this project
+      secondaryLink: { href: 'https://qrcode.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
+      // custom-qr-code-generator.onrender.com
       thumb: 'https://i.ibb.co/vx177bm3/qrcode-thumb.webp',
       preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
     },
@@ -69,7 +71,8 @@ export default function Projects() {
       theme: 'gdrive',
       stacks: ['python', 'opensource'],
       primaryLink: { href: 'https://github.com/juansilvadesign/gdrive-video', label: 'Go to Project', icon: '/assets/icons/github.svg' },
-      secondaryLink: { href: 'https://gdrive-video.streamlit.app', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
+      secondaryLink: { href: 'https://gdrive.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
+      // https://gdrive-video.streamlit.app
       thumb: '/assets/icons/gdrive-thumb.svg',
       preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
     },
