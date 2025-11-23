@@ -41,7 +41,8 @@ export default function Projects() {
       primaryLink: { href: 'https://github.com/ZokuWebDesign/spaceapps', label: 'Go to Project', icon: '/assets/icons/github.svg' },
       secondaryLink: { href: 'https://spaceapps.com.br/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
       thumb: '/assets/icons/space-thumb.svg',
-      preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Explorer Preview' },
+      preview: { type: 'image', src: 'https://i.ibb.co/0jbN3VkW/spaceapps-preview.webp', alt: 'Explorer Preview' },
+      // /assets/logo/video-placeholder.png
     },
     {
       title: 'Loom Downloader',
@@ -52,7 +53,8 @@ export default function Projects() {
       secondaryLink: { href: 'https://loom.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
       // loom-downloader-7xpq.onrender.com
       thumb: '/assets/icons/loom-thumb.svg',
-      preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Landing Preview' },
+      preview: { type: 'image', src: 'https://i.ibb.co/YFrsc37n/loom-preview.webp', alt: 'Landing Preview' },
+      // /assets/logo/video-placeholder.png
     },
     {
       title: 'QR Code Generator',
@@ -63,7 +65,8 @@ export default function Projects() {
       secondaryLink: { href: 'https://qrcode.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
       // custom-qr-code-generator.onrender.com
       thumb: 'https://i.ibb.co/vx177bm3/qrcode-thumb.webp',
-      preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
+      preview: { type: 'image', src: 'https://i.ibb.co/dwTpxvfJ/qrcode-preview.webp', alt: 'Studio Preview' },
+      // /assets/logo/video-placeholder.png
     },
     {
       title: 'GDrive Video',
@@ -74,7 +77,8 @@ export default function Projects() {
       secondaryLink: { href: 'https://gdrive.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
       // https://gdrive-video.streamlit.app
       thumb: '/assets/icons/gdrive-thumb.svg',
-      preview: { type: 'image', src: '/assets/logo/video-placeholder.png', alt: 'Studio Preview' },
+      preview: { type: 'image', src: 'https://i.ibb.co/ymQSkTGy/gdrive-video.webp', alt: 'Studio Preview' },
+      // /assets/logo/video-placeholder.png
     },
   ]
   const [selected, setSelected] = useState(0)
