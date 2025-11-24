@@ -56,7 +56,7 @@ export function Stack({ id }: StackProps) {
   
   return (
     <button className={`${style.border} p-[1px] rounded-full`}>
-      <div className={`flex flex-row pl-[10px] pr-[12px] py-[4px] ${style.bg} rounded-full ${style.text} gap-[4px]`}>
+      <div className={`shrink-0 flex flex-row pl-[10px] pr-[12px] py-[4px] ${style.bg} rounded-full ${style.text} gap-[4px]`}>
         <img src={style.icon} alt={style.name} />
         <span className="text-[14px]">{style.name}</span>
       </div>
@@ -66,7 +66,7 @@ export function Stack({ id }: StackProps) {
 
 export default function Stacks({ stacks }: { stacks: StackId[] }) {
   return (
-    <div className="flex flex-row w-full gap-[12px] h-auto">
+    <div className="flex flex-row w-full gap-[12px] h-auto flex-wrap">
       {stacks.map((stackId) => (
         <Stack key={stackId} id={stackId} />
       ))}

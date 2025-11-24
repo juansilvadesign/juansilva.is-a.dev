@@ -155,19 +155,19 @@ const Contact = () => {
     }
   };
   return (
-    <section>
+    <section className="relative min-h-screen">
 
-      <img src="/assets/logo/contact-bg.png" alt="Hero Image" className="absolute z-10 object-cover h-[1080px]" />
+      <img src="/assets/logo/contact-bg.png" alt="Hero Image" className="absolute z-10 object-cover w-full h-full" />
 
-      <div className="absolute z-20 max-w-[1920px] mx-auto pt-[200px] pl-[252px]">
-        <div className="flex flex-col gap-12 max-w-[570px]">
+      <div className="relative z-20 max-w-[1920px] mx-auto pt-24 md:pt-28 xl:pt-32 2xl:pt-[200px] pb-6 px-6 md:px-24 xl:px-32 2xl:px-[252px]">
+        <div className="flex flex-col gap-6 lg:gap-8 2xl:gap-12 max-w-[576px] lg:max-w-[570px]">
 
           <div className="flex flex-col">
             {/* Title */}
-            <h1 className="text-[#F7F7F7]">
+            <h1>
               Let's Connect
             </h1>
-            <p className="text-[#CECFD2]">
+            <p className="mt-0 2xl:mt-4">
               I partner with early-stage teams to move from concept to evidence. My work spans discovery, UX/UI, and production-ready frontend (React/TypeScript), with an emphasis on measurable outcomes.
             </p>
           </div>
@@ -286,7 +286,7 @@ const Contact = () => {
               )}
             </div>
             {/* Checkbox */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-start md:items-center gap-3">
               <Checkbox
                 type="checkbox"
                 id="terms"
@@ -303,6 +303,7 @@ const Contact = () => {
           {/* Submit Button */}
           <button
             type="submit"
+            onClick={handleSubmit}
             className={`w-full px-[18px] py-[12px] rounded-[8px] font-semibold transition-all duration-300 ${submitSuccess
               ? "bg-green-500/20 border-2 border-green-500 text-green-400"
               : isSubmitting

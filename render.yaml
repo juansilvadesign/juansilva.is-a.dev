@@ -1,15 +1,4 @@
 services:
-  - type: web
-    name: juansilva-frontend
-    env: node
-    region: virginia
-    buildCommand: npm install && npm run build
-    startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: NEXT_PUBLIC_API_URL
-        sync: false # Configure in dashboard to point to backend URL
 
   - type: web
     name: juansilva-backend

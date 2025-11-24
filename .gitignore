@@ -16,6 +16,7 @@ server_backup_sheets.js
 server_backup_mail.js
 server_backup_full.js
 server_backup_full_v2.js
+backup.yaml
 
 # next.js
 /.next/

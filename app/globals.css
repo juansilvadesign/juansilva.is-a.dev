@@ -60,6 +60,7 @@ h1 {
   font-weight: 500;
   font-size: 3.5rem;
   line-height: 5.625rem;
+  color: #F7F7F7;
 }
 
 h2 {
@@ -67,6 +68,7 @@ h2 {
   font-weight: 500;
   font-size: 3rem;
   line-height: 4.25rem;
+  color: #F7F7F7;
 }
 
 h3 {
@@ -81,6 +83,7 @@ h6 {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  color: #F7F7F7;
 }
 
 p {
@@ -88,6 +91,7 @@ p {
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;
+  color: #CECFD2;
 }
 
 @font-face {
@@ -142,6 +146,21 @@ p {
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

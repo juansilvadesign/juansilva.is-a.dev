@@ -4,24 +4,24 @@ import { SOCIAL_LINKS } from "@/constants/links";
 
 export default function Hero() {
   return (
-    <section className="py-[174px]">
-      
-      <div className="flex flex-row mx-auto px-4 justify-center items-center gap-[104px]">
+    <section className="py-6 md:py-8 lg:py-24 2xl:py-[174px]">
 
-        <img src="https://i.ibb.co/4RQQ7qnw/hero.webp" alt="Hero" />
+      <div className="flex flex-col lg:flex-row mx-auto px-4 justify-center items-center gap-12 lg:gap-[104px]">
 
-        <div className="flex flex-col max-w-[610px] pt-24 gap-12">
-          <div className="flex flex-col px-4 gap-4">
+        <img src="https://i.ibb.co/4RQQ7qnw/hero.webp" alt="Hero" className="w-[300px] xl:w-[400px] 2xl:w-auto" />
 
-            <h1 className="text-[#F7F7F7]">Juan Silva</h1>
-            <p className="text-[#CECFD2]">
+        <div className="flex flex-col max-w-[610px] pt-0 lg:pt-24 gap-8 lg:gap-12 items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col px-[12px] gap-2 lg:gap-4">
+
+            <h1>Juan Silva</h1>
+            <p>
               Full-stack developer from RJ <span className="inline-flex w-[14px]"><img src="/assets/icons/BR.svg" alt="Brazil Flag" /></span><br />
-              I design with intention, code with care, and iterate with users. I love turning complex ideas into interfaces that feel obvious, and then pushing the craft with animations and micro-details. 
+              I design with intention, code with care, and iterate with users. I love turning complex ideas into interfaces that feel obvious, and then pushing the craft with animations and micro-details.
             </p>
 
           </div>
 
-          <div className="flex flex-row w-full gap-2 h-auto">
+          <div className="flex flex-row w-full gap-2 h-auto justify-center lg:justify-start">
 
             <a
               href={SOCIAL_LINKS.LINKEDIN}
@@ -93,15 +93,15 @@ export default function Hero() {
               href={SOCIAL_LINKS.GITHUB}
               target="_blank"
               rel="noreferrer"
-              className="group flex flex-row items-center justify-start p-[2px] rounded-full w-12 h-12 hover:w-auto transition-all duration-300"
+              className="group hidden lg:flex flex-row items-center justify-start p-[2px] rounded-full w-12 h-12 hover:w-auto transition-all duration-300"
               aria-label="GitHub Profile"
             >
               <div className="inline-flex w-[28px] h-[28px] ml-[10px] group-hover:w-auto group-hover:bg-[#0C0E12] border border-[#94979C] rounded-full px-[4px] group-hover:pr-[8px] py-[4px] gap-[6px] items-center transition-all duration-300">
-                <p className="w-[14px] text-[14px] leading-[1.25rem] text-center" style={{fontFamily: "Inter, sans-serif"}}>🏝️</p>
+                <p className="w-[14px] text-[14px] leading-[1.25rem] text-center" style={{ fontFamily: "Inter, sans-serif" }}>🏝️</p>
                 <p className="text-[14px] text-[#CECFD2] font-medium leading-[1.25rem] hidden group-hover:block">Living my dream while building it!</p>
               </div>
             </a>
-          
+
           </div>
         </div>
       </div>
