@@ -2,8 +2,32 @@
 
 import { LEGAL_LINKS, SOCIAL_LINKS, WHATSAPP_LINKS } from '@/constants/links';
 import Link from 'next/link';
+import { useState, useRef, useEffect } from 'react';
 
 const Footer = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const SITE_VERSIONS = [
+    /*
+    { label: '2026', url: 'https://juansilva.is-a.dev', active: false },
+    */
+    { label: '2025', url: 'https://juansilva.is-a.dev', active: true },
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <footer className="bottom-0 left-0 w-full bg-[#0F1217]">
       <div className="flex max-w-screen-[1920px] mx-auto gap-6 px-6 md:px-12 lg:px-20 2xl:px-[252px]">
@@ -135,9 +159,27 @@ const Footer = () => {
               © {new Date().getFullYear()} Juan Silva. All rights reserved.
             </p>
 
-            <div className="relative z-10 flex flex-row justify-center items-center pl-4 pr-2 py-[6px] gap-1 rounded-full bg-[#0C0E12] border border-[#22262F] text-[#CECFD2] text-sm">
+            <div
+              className="relative z-10 flex flex-row justify-center items-center pl-4 pr-2 py-[6px] gap-1 rounded-full bg-[#0C0E12] border border-[#22262F] text-[#CECFD2] text-sm cursor-pointer hover:bg-[#1A1D24] transition-colors duration-200"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              ref={dropdownRef}
+            >
               2025
               <img src="/assets/icons/chevron-selector-vertical.svg" alt="Selector" className="inline-block w-4 h-4" />
+
+              {isDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full min-w-[96px] bg-[#0C0E12] border border-[#22262F] rounded-lg shadow-xl overflow-hidden">
+                  {SITE_VERSIONS.map((version, index) => (
+                    <a
+                      key={index}
+                      href={version.url}
+                      className={`block px-4 py-[12px] text-sm text-center hover:bg-[#1A1D24] transition-colors duration-200 ${version.active ? 'text-white font-medium' : 'text-[#94979C]'}`}
+                    >
+                      {version.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="flex flex-row justify-center items-center px-[10px] py-1 gap-[6px] rounded-[8px] bg-[#0C0E12] border border-[#373A41] text-[#CECFD2] text-sm font-medium">
