@@ -42,7 +42,7 @@ export default function Projects() {
         secondaryLink: { href: 'https://spaceapps.com.br/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
         thumb: '/assets/icons/space-thumb.svg',
         preview: { type: 'image', src: 'https://i.ibb.co/0jbN3VkW/spaceapps-preview.webp', alt: 'Explorer Preview' },
-        // /assets/logo/video-placeholder.png
+        // /assets/logo/video-placeholder.png | https://i.ibb.co/0y8M7fN1/spaceapps-mobile-preview.webp
       },
       {
         title: 'Loom Downloader',
@@ -53,8 +53,8 @@ export default function Projects() {
         secondaryLink: { href: 'https://loom.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
         // loom-downloader-7xpq.onrender.com
         thumb: '/assets/icons/loom-thumb.svg',
-        preview: { type: 'image', src: 'https://i.ibb.co/YFrsc37n/loom-preview.webp', alt: 'Landing Preview' },
-        // /assets/logo/video-placeholder.png
+        preview: { type: 'image', src: 'https://i.ibb.co/7dcgTQDn/loom-preview-zoom.webp', alt: 'Landing Preview' },
+        // /assets/logo/video-placeholder.png | https://i.ibb.co/YFrsc37n/loom-preview.webp | https://i.ibb.co/R49VSYFB/loom-mobile-preview.webp
       },
       {
         title: 'QR Code Generator',
@@ -65,8 +65,8 @@ export default function Projects() {
         secondaryLink: { href: 'https://qrcode.juansilva.is-a.dev/', label: 'Live Project', icon: '/assets/icons/link-external-02.svg' },
         // custom-qr-code-generator.onrender.com
         thumb: 'https://i.ibb.co/vx177bm3/qrcode-thumb.webp',
-        preview: { type: 'image', src: 'https://i.ibb.co/dwTpxvfJ/qrcode-preview.webp', alt: 'Studio Preview' },
-        // /assets/logo/video-placeholder.png
+        preview: { type: 'image', src: 'https://i.ibb.co/bjKDPShj/qrcode-preview-zoom.webp', alt: 'Studio Preview' },
+        // /assets/logo/video-placeholder.png | https://i.ibb.co/dwTpxvfJ/qrcode-preview.webp | https://i.ibb.co/nN1wKyB9/qrcode-mobile-preview.webp
       },
       {
         title: 'GDrive Video',
@@ -78,7 +78,7 @@ export default function Projects() {
         // https://gdrive-video.streamlit.app
         thumb: '/assets/icons/gdrive-thumb.svg',
         preview: { type: 'image', src: 'https://i.ibb.co/ymQSkTGy/gdrive-video.webp', alt: 'Studio Preview' },
-        // /assets/logo/video-placeholder.png
+        // /assets/logo/video-placeholder.png | https://i.ibb.co/Xx2c8pNs/gdrive-mobile-preview.webp
       },
     ]
   const [selected, setSelected] = useState(0)
@@ -152,9 +152,9 @@ export default function Projects() {
         {/* Right-side shared preview (large) — updates with the selected project */}
         <div className="w-full 2xl:w-auto pb-8 md:pb-14 lg:pb-0">
           {projects[selected]?.preview?.type === 'image' ? (
-            <img src={projects[selected].preview!.src} alt={projects[selected].preview!.alt ?? projects[selected].title} />
+            <img src={projects[selected].preview!.src} alt={projects[selected].preview!.alt ?? projects[selected].title} className="rounded-[12px]" />
           ) : projects[selected]?.preview?.type === 'video' ? (
-            <video src={projects[selected].preview!.src} controls />
+            <video src={projects[selected].preview!.src} controls className="rounded-[12px]" />
           ) : (
             <img src="/assets/logo/video-placeholder.png" alt="Preview placeholder" />
           )}
