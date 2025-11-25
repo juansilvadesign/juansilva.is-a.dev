@@ -62,12 +62,12 @@ const limiter = rateLimit({
 // CORS configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production'
-    ? ['https://juansilva.is-a.dev', 'https://www.juansilva.is-a.dev'] // Updated to user's domain
-    : 'http://localhost:3000', // Updated to Next.js default port
+    ? ['https://juansilva.is-a.dev', 'https://www.juansilva.is-a.dev', 'https://dev.juanpablosilva.com.br']
+    : 'http://localhost:3000',
   methods: ['POST'],
   optionsSuccessStatus: 204,
   credentials: true,
-  maxAge: 86400, // Cache preflight request for 24 hours
+  maxAge: 86400,
 };
 
 app.use(cors(corsOptions));
@@ -77,15 +77,14 @@ app.use('/api/send', limiter); // Aplica rate limiting na rota de envio
 const transporter = nodemailer.createTransport({
   host: 'smtppro.zoho.com',
   port: 465,
-  secure: true, // true para 465, false para outras portas
+  secure: true,
   auth: {
     user: process.env.ZOHO_USER,
     pass: process.env.ZOHO_PASSWORD,
   },
-  debug: true, // Ativa logs detalhados
+  debug: true,
 });
 
-// Verificar a conexão antes de iniciar o servidor
 transporter.verify(function (error, success) {
   if (error) {
     console.log('Erro na verificação do servidor de email:', error);
