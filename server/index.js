@@ -73,14 +73,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use('/api/send', limiter); // Aplica rate limiting na rota de envio
 
-// Criar o transporter com as configurações do Zoho Mail
 const transporter = nodemailer.createTransport({
-  host: 'smtppro.zoho.com',
-  port: 465,
-  secure: true,
+  service: 'gmail',
   auth: {
-    user: process.env.ZOHO_USER,
-    pass: process.env.ZOHO_PASSWORD,
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS,
   },
   debug: true,
 });
@@ -135,18 +132,18 @@ app.post('/api/send', validateEmailRequest, async (req, res) => {
     const { fname, lname, email, message } = req.body;
 
     // Validar se temos as credenciais necessárias
-    if (!process.env.ZOHO_USER || !process.env.ZOHO_PASSWORD) {
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
       throw new Error('Credenciais de email não configuradas');
     }
 
     console.log('Iniciando tentativa de envio de email...');
-    console.log('De:', process.env.ZOHO_USER);
+    console.log('De:', process.env.GMAIL_USER);
     console.log('Dados do formulário:', { fname, lname, email });
 
     const info = await transporter.sendMail({
-      from: process.env.ZOHO_USER, // Usar apenas o email autorizado como remetente
+      from: process.env.GMAIL_USER, // Usar apenas o email autorizado como remetente
       replyTo: email, // Email do formulário para resposta
-      to: process.env.ZOHO_USER,
+      to: process.env.GMAIL_USER,
       subject: `New Contact Form Submission from ${fname} ${lname}`,
       text: `
         Name: ${fname} ${lname}
