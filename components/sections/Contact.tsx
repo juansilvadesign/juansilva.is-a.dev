@@ -1,11 +1,13 @@
 "use client"
 
 import { useState } from "react";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import { LEGAL_LINKS } from "@/constants/links";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -295,7 +297,7 @@ const Contact = () => {
                 required
               />
               <label htmlFor="terms" className="text-[#85888E] text-sm font-lora leading-4">
-                Li e estou de acordo com Termo de Uso e Política de Privacidade.
+                I have read and agreed with <Link href={LEGAL_LINKS.TERMS_OF_USE} className="underline hover:text-white transition-colors">Terms of Use</Link> and <Link href={LEGAL_LINKS.PRIVACY_POLICY} className="underline hover:text-white transition-colors">Privacy Policy</Link>.
               </label>
             </div>
           </form>

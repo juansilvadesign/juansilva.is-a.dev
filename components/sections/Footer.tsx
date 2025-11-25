@@ -1,6 +1,6 @@
 'use client';
 
-import { LEGAL_LINKS, SOCIAL_LINKS, WHATSAPP_LINKS } from '@/constants/links';
+import { LEGAL_LINKS, PAGE_LINKS, SOCIAL_LINKS, WHATSAPP_LINKS } from '@/constants/links';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 
@@ -109,13 +109,13 @@ const Footer = () => {
                 <h6 className="px-4 py-[12px] font-medium">
                   Navigation
                 </h6>
-                <Link href="/" className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
+                <Link href={PAGE_LINKS.HOME} className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
                   Home
                 </Link>
-                <Link href="/projects" className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
+                <Link href={PAGE_LINKS.PROJECTS} className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
                   Projects
                 </Link>
-                <Link href="/contact" className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
+                <Link href={PAGE_LINKS.CONTACT} className="block px-4 py-[12px] text-[#CECFD2] hover:text-[#F7F7F7] transition-colors duration-300">
                   Contact
                 </Link>
               </div>

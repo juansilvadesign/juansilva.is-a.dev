@@ -3,6 +3,7 @@
 import { SOCIAL_LINKS } from '@/constants/links';
 import Link from 'next/link';
 import { useLanding } from '@/app/context/LandingContext';
+import { PAGE_LINKS } from '@/constants/links';
 
 const Navbar = () => {
   const { isLandingVisible } = useLanding();
@@ -19,7 +20,7 @@ const Navbar = () => {
       <div className="max-w-screen-2xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo/Home link */}
-          <Link href="/" className="w-[210px] group relative">
+          <Link href={PAGE_LINKS.HOME} className="w-[210px] group relative">
             {/* Dramatic lens flare 
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute top-[-25px] left-[-40px] w-[240px] h-[90px] bg-[#625DF5] blur-[45px] mix-blend-color-dodge" />
@@ -43,7 +44,7 @@ const Navbar = () => {
           {/* Navigation links */}
           <div className="flex items-center gap-2 text-[#CECFD2] text-sm md:text-[18px] leading-[32px]">
             <Link
-              href="/"
+              href={PAGE_LINKS.HOME}
               className="p-2 lg:p-4 group relative flex flex-col hover:text-[#F7F7F7] transition-colors duration-300"
             >
               Home
@@ -52,7 +53,7 @@ const Navbar = () => {
               </div>
             </Link>
             <Link
-              href="/projects"
+              href={PAGE_LINKS.PROJECTS}
               className="p-2 lg:p-4 group relative flex flex-col hover:text-[#F7F7F7] transition-colors duration-300"
             >
               Projects
@@ -61,7 +62,7 @@ const Navbar = () => {
               </div>
             </Link>
             <Link
-              href="/contact"
+              href={PAGE_LINKS.CONTACT}
               className="p-2 lg:p-4 group relative flex flex-col hover:text-[#F7F7F7] transition-colors duration-300"
             >
               Contact

@@ -1,4 +1,4 @@
-import { Gift } from "lucide-react";
+import Projects from "@/components/sections/Projects";
 
 // WhatsApp Links
 export const WHATSAPP_LINKS = {
@@ -25,7 +25,7 @@ export const SOCIAL_LINKS = {
   YOUTUBE: 'https://youtube.com/juansilvadesign',
   TIKTOK: 'https://tiktok.com/juansilvadesign',
   FACEBOOK: 'https://www.facebook.com/people/juansilvadesign/',
-  MAIL: 'mailto:contact@juansilva.is-a.dev',
+  MAIL: 'mailto:contact@juan.is-a.dev',
   NUMBER: 'tel:+5521966442965',
   LOCAL: '#'
 } as const;
@@ -33,11 +33,13 @@ export const SOCIAL_LINKS = {
 // Page Links
 export const PAGE_LINKS = {
   HOME: '/',
+  PROJECTS: '/projects',
+  CONTACT: '/contact'
 } as const;
 
 // Legal Links
 export const LEGAL_LINKS = {
-  PRIVACY_POLICY: '/privacy',
-  TERMS_OF_USE: '/terms',
+  PRIVACY_POLICY: '/privacy-policy',
+  TERMS_OF_USE: '/terms-of-use',
   COOKIES_POLICY: '/cookies'
 } as const;
